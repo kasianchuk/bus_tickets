@@ -1,14 +1,21 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BusTickets</title>
-    <%= csrf_meta_tags %>
-
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="<%= content_for?(:description) ? yield(:description) : 'BusTickets' %>" name="description"/>
+    <title><%= content_for?(:title) ? yield(:title) : 'BusTickets' %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
   </head>
-
   <body>
-    <%= yield %>
+    <header>
+      <%= render 'layouts/navigation' %>
+    </header>
+    <main role="main">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </main>
   </body>
 </html>
