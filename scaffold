@@ -1,0 +1,15 @@
+rails g scaffold Route numb_of_seats:integer departure:string departure_date:date, departure_time:time, arrival:string, arrival_date:date, arrival_time:time
+
+думаю непоганим рішенням буде розділення на 2 моделі, Route та вкладеного StopPoint
+
+StopPoint has_and_belongs_to_many :routes
+Route has_and_belongs_to_many :stop_points
+і stop_point-и створюивати в середині роута, але в той же час мати можливість їх перевикористання між роутами, стрий то в нас один для всіх
+
+
+їх може бути і буде багато
+можеш окермо створювати міста
+окремо маршрути
+а потім для маршрута “вибирати” міста і сортувати їх в правильній послідовності
+А можеш спростити собі життя... )
+І оголосити, що твоя аплікація продає білети тільки на експрес рейсти А-Б і ніяких зупинок)

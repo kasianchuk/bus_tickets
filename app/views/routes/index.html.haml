@@ -1,0 +1,35 @@
+%h1 Listing routes
+
+%table
+  %thead
+    %tr
+      %th Numb of seats
+      %th Departure
+      %th Departure date
+      %th Departure time
+      %th Arrival
+      %th Arrival date
+      %th Arrival time
+      %th Nonstop
+      %th
+      %th
+      %th
+
+  %tbody
+    - @routes.each do |route|
+      %tr
+        %td= route.numb_of_seats
+        %td= route.departure
+        %td= route.departure_date
+        %td= route.departure_time
+        %td= route.arrival
+        %td= route.arrival_date
+        %td= route.arrival_time
+        %td= route.nonstop
+        %td= link_to 'Show', route
+        %td= link_to 'Edit', edit_route_path(route)
+        %td= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Route', new_route_path
