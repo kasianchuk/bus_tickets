@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%p
+  %b Numb of seats:
+  = @route.numb_of_seats
+%p
+  %b Departure:
+  = @route.departure
+%p
+  %b Departure date:
+  = @route.departure_date
+%p
+  %b Departure time:
+  = @route.departure_time
+%p
+  %b Arrival:
+  = @route.arrival
+%p
+  %b Arrival date:
+  = @route.arrival_date
+%p
+  %b Arrival time:
+  = @route.arrival_time
+%p
+  %b Nonstop:
+  = @route.nonstop
+
+= link_to 'Edit', admin_edit_route_path(@route)
+\|
+= link_to 'Back', admin_routes_path
