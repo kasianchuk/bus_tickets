@@ -1,0 +1,23 @@
+%table.table.table-hover.text-center
+  %thead
+    %tr
+      %th.text-center Дата
+      %th.text-center Відправлення
+      %th.text-center Прибуття
+      %th.text-center Кількість місць
+      %th.text-center Прямі рейси
+
+  %tbody
+    - @routes.each do |route|
+      %tr{:onclick => "window.location='#{route_path(route.id)}'"}
+        %td= route.departure_date
+        %td
+          = route.departure
+          %b
+            = route.departure_time.strftime("%H:%M")
+        %td
+          %b
+            = route.arrival_time.strftime("%H:%M")
+          = route.arrival
+        %td= route.numb_of_seats
+        %td= route.nonstop

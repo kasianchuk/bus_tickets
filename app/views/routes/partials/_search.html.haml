@@ -1,0 +1,7 @@
+.routes_search-block
+  = form_tag routes_path, method: :get, :id => "routes_search", class: "", remote: true, :role => "search" do
+    %p Шукати маршрут
+    .form-group
+      = select_tag 'departure', options_for_select( Route.all.map{ |r| [r.departure, r.id] }), id: 'departure', include_blank: 'Відправлення', class: "form-control"
+    .form-group
+      = text_field_tag 'departure_time', nil, id: 'datepicker', class: 'form-control', placeholder: 'Дата Відправлення'

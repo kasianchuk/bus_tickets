@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require font-awesome
+ *= require bootstrap-datepicker
+ *= require_self
+ *= require_tree .
+ */
+ @import 'bootstrap';
+ @import "font-awesome";
+
+
+  .routes_search-block{
+    display: flex;
+    justify-content: center;
+  }
+
+  #routes_search {
+    padding: 0 5%;
+    border: 2px solid rgba(61, 155, 233, 1);
+    background-color: rgba(61, 155, 233, 0.03);
+    border-radius: 20px;
+    font-style:italic;
+  }
+
+  #routes_search p{
+    color: #535353;
+    font-size: 20px;
+    font-weight:bold;
+    font-style:normal;
+  }
+
+
+  .table {
+    background-color: rgba(61, 155, 233, 0.03);
+  }
+
+  .table th, .bg-color {
+    background: #297199;
+    color: #fff;
+    font-size: 18px;
+    font-weight:bold;
+  }
+
+  .datepicker-inline, .table-condensed{
+    width: 100%;
+    font-style: normal;
+  }
+
+  table {
+    background-color: rgba(61, 155, 233, 0.03);
+  }
+
+  .table th, .bg-color {
+    background: #297199;
+    color: #fff;
+  }
+
+  #search .table tbody tr:hover{
+    cursor: pointer;
+  }
+
+  #map {
+    height: 329px;
+
+    border: 1px solid #999;
+    -moz-box-shadow:    0px 0px 5px #ccc;
+    -webkit-box-shadow: 0px 0px 5px #ccc;
+    box-shadow:         0px 0px 5px #ccc;
+  }
+
+  .bg-color {
+    padding: 10px;
+  }
+
+  .map-info,.general-info,.arrow-left{
+    font-size: 16px;
+  }
+
+  .general-info{
+    border: 1px solid #dfdfdf;
+  }
+
+  .general-info tr{
+    height: 20px;
+  }

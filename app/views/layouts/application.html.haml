@@ -7,6 +7,7 @@
     %title= content_for?(:title) ? yield(:title) : 'BusTickets'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{:src=> "https://maps.googleapis.com/maps/api/js?key=AIzaSyCAE8sBeoTbCFRTlqrqtS1WwJHDvKIQkco&libraries=places"}
     = csrf_meta_tags
   %body
     %header

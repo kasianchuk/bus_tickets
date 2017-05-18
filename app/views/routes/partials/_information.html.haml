@@ -1,0 +1,42 @@
+%h1.bg-color.text-center Інформація про маршрут #{@route.departure} - #{@route.arrival}
+%table.table.general-info
+  %tbody
+    %tr
+      %td Дата та Час відправлення
+      %td
+        %i.fa.fa-calendar{"aria-hidden" => "true"}
+          = @route.departure_date.strftime("%d.%m.%Y")
+        %i.fa.fa-clock-o{"aria-hidden" => "true"}
+          = @route.departure_time.strftime("%H:%M")
+    %tr
+      %td Відправлення
+      %td
+        %i.fa.fa-bus{"aria-hidden" => "true"}
+          = @route.departure
+    %tr
+      %td Дата та Час прибуття
+      %td
+        %i.fa.fa-calendar{"aria-hidden" => "true"}
+          = @route.arrival_date.strftime("%d.%m.%Y")
+        %i.fa.fa-clock-o{"aria-hidden" => "true"}
+          = @route.arrival_time.strftime("%H:%M")
+    %tr
+      %td Прибуття
+      %td
+        %i.fa.fa-map-marker{"aria-hidden" => "true"}
+          = @route.arrival
+    %tr
+      %td Кількість вільних місць
+      %td
+        %i.fa.fa-group{"aria-hidden" => "true"}
+          = @route.numb_of_seats
+    %tr
+      %td Тип рейсу
+      %td
+        - case @route.nonstop
+          - when true
+            %i.fa.fa-fast-forward{"aria-hidden" => "true"}
+              Прямий рейс без зупинок
+          - else
+            %i.fa.fa-pause{"aria-hidden" => "true"}
+              Звичайний рейс

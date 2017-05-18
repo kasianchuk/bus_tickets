@@ -1,30 +1,13 @@
-%p#notice= notice
-
-%p
-  %b Numb of seats:
-  = @route.numb_of_seats
-%p
-  %b Departure:
-  = @route.departure
-%p
-  %b Departure date:
-  = @route.departure_date
-%p
-  %b Departure time:
-  = @route.departure_time
-%p
-  %b Arrival:
-  = @route.arrival
-%p
-  %b Arrival date:
-  = @route.arrival_date
-%p
-  %b Arrival time:
-  = @route.arrival_time
-%p
-  %b Nonstop:
-  = @route.nonstop
-
-= link_to 'Edit', edit_route_path(@route)
-\|
-= link_to 'Back', routes_path
+.mt-4
+  .container
+    .card
+      .card-block
+        .row
+          .col-lg-9
+            = render 'routes/partials/information'
+          .col-lg-3
+            = render 'routes/partials/map'
+    .mt-2
+      .arrow-left
+        %i.fa.fa-arrow-left{"aria-hidden" => "true"}
+          = link_to 'Back', root_path

@@ -12,6 +12,44 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require tether
 //= require bootstrap-sprockets
+//= require geocomplete
+//= require gmaps/google
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.ua.js
+//= require moment
 //= require_tree .
+
+
+$(document).ready(function(){
+  $(function() {
+
+    $( "#datepicker" ).change(function() {
+      $.get($("#routes_search").attr("action"), $("#routes_search").serialize(), null, "script");
+      return false;
+    })
+
+    $('#datepicker').datepicker({
+      language: "uk",
+      format: "yy-mm-dd",
+      autoclose: true,
+      todayHighlight: true,
+      orientation: "bottom right",
+      startDate: "dateToday"
+    });
+
+    $("#route_location").geocomplete({
+      map: "#map",
+      location: $("#route_location").text(),
+      mapOptions: {
+          zoom: 10,
+          scrollwheel: true
+      },
+      detailsAttribute: "data-geo",
+      blur: true,
+      geocodeAfterResult: true
+    });
+  });
+})
