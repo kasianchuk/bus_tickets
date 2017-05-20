@@ -1,0 +1,15 @@
+#buyTicket.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title Заповніть форму
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      = simple_form_for @route  do |f|
+        = f.fields_for :tickets, @route.tickets.new do |ticket|
+          .modal-body
+            = ticket.input :user_id, as: :hidden, :input_html => ({ :value => current_user.id })
+            = ticket.input :chair_num, label: "Вибрати місце"
+          .modal-footer
+            %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Закрити
+            = ticket.submit "Зберегти", class: 'btn btn-primary'

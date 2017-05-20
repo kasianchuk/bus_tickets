@@ -29,7 +29,9 @@
       %td Кількість вільних місць
       %td
         %i.fa.fa-group{"aria-hidden" => "true"}
-          = @route.numb_of_seats
+          = @route.numb_of_seats - @route.ticket_ids.count
+
+          %button.btn.btn-sm.btn-secondary{"data-target" => "#buyTicket", "data-toggle" => "modal", :type => "button"} Купити квиток
     %tr
       %td Тип рейсу
       %td

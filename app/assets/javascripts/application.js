@@ -19,12 +19,16 @@
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.ua.js
-//= require moment
 //= require_tree .
 
 
 $(document).ready(function(){
   $(function() {
+
+    $( "#departure" ).change(function() {
+      $.get($("#routes_search").attr("action"), $("#routes_search").serialize(), null, "script");
+      return false;
+    })
 
     $( "#datepicker" ).change(function() {
       $.get($("#routes_search").attr("action"), $("#routes_search").serialize(), null, "script");

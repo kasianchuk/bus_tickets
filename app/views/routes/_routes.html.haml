@@ -19,5 +19,8 @@
           %b
             = route.arrival_time.strftime("%H:%M")
           = route.arrival
-        %td= route.numb_of_seats
+        %td= route.numb_of_seats - route.ticket_ids.count
         %td= route.nonstop
+
+.col-md-12
+  = paginate @routes, :window => 2
